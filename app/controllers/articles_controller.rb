@@ -1,6 +1,6 @@
 class ArticlesController < ApplicationController
 
-  def headlines
+  def topStories
     response = Faraday.get 'https://newsapi.org/v2/top-headlines?' do |req|
       req.params['apiKey'] = ENV['SECRET_KEY']
       req.params['country'] = 'us'
