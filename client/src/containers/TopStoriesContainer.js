@@ -23,13 +23,13 @@ class TopStoriesContainer extends Component {
 
 }
 
-const mapStateToProps = state => {
-  return {topStories: state.articles.topStories}
+const mapStateToProps = (state) => {
+  return {topStories: state.topStories}
 }
 
 const mapDispatchToProps = dispatch => {
   return {
-    fetchTopStories: () => dispatch(fetchTopStories)
+    fetchTopStories: () => dispatch(fetchTopStories())
   }
 }
 
