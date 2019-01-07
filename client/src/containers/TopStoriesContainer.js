@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import Article from '../components/article';
 import { connect } from 'react-redux';
-// add actions
+import { fetchTopStories } from '../actions/articleActions';
 
 class TopStoriesContainer extends Component {
   componentDidMount() {
-
+    this.props.fetchTopStories()
   }
 
   componentWillUnmount() {
@@ -29,8 +29,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    
+    fetchTopStories: () => dispatch(fetchTopStories)
   }
 }
 
-export default TopStoriesContainer;
+export default connect(mapStateToProps, mapDispatchToProps)(TopStoriesContainer);
