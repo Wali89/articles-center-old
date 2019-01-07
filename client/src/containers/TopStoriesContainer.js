@@ -9,7 +9,7 @@ class TopStoriesContainer extends Component {
   }
 
   componentWillUnmount() {
-
+    clearInterval(this.interval);
   }
 
   render() {
