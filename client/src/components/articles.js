@@ -1,5 +1,5 @@
 import React from 'react';
-import Article from '../components/article';
+import Article from './article';
 
 const Articles =(props) => {
 
