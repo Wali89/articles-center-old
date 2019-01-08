@@ -17,3 +17,12 @@ export function fetchChannels() {
       .then(articles => dispatch({type: 'FETCH_CHANNELS', payload: articles}))
   }
 }
+
+export function searchChannelArticles() {
+  return (dispatch) => {
+    dispatch({type: 'LOADING_ARTICLES'});
+    return fetch('/api/channels/${channel}/${page}')
+      .then(response => response.json())
+      .then(articles => dispatch({type: 'FETCH_CHANNEL_ARTICLES', payload: articles}))
+  }
+}
