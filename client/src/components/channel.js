@@ -13,11 +13,11 @@ class Channel extends Component {
             name: this.props.name
           }
         }}>{this.props.name} </Link> </h3>
-        <p> {this.props.name}</p>
-        <br> </br>
+
+        
       </div>
     )
   }
 }
 
-export default Source;
+export default Channel;
