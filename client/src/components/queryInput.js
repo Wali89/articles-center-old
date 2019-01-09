@@ -36,7 +36,7 @@ class QueryInput extends Component {
           <div>
             <input type="text" placeholder="Search" value={this.state.text} onChange={this.handleChange}/>
             <button type="submit">Search</button>
-            
+
           </div>
         </form>
       </div>
@@ -44,3 +44,5 @@ class QueryInput extends Component {
   }
 
 } 
+
+export default QueryInput;
