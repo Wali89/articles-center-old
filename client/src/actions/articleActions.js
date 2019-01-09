@@ -18,10 +18,10 @@ export function fetchChannels() {
   }
 }
 
-export function searchChannelArticles() {
+export function searchChannelArticles(channel) {
   return (dispatch) => {
     dispatch({type: 'LOADING_ARTICLES'});
-    return fetch('/api/channels/${channel}/${page}')
+    return fetch(`/api/channels/${channel}`)
       .then(response => response.json())
       .then(articles => dispatch({type: 'FETCH_CHANNEL_ARTICLES', payload: articles}))
   }

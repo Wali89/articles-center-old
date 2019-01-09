@@ -21,7 +21,7 @@ class ChannelArticlesContainer extends Component {
         </div>
       
 
-        <div>
+        <div className>
           <Articles articles={this.props.channelArticles} source= {this.props.match.params.id}/>
         </div>
       </div>
@@ -37,7 +37,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    searchChannelArticles: (source, page) => dispatch(seachChannelArticles(source))
+    searchChannelArticles: (channel) => dispatch(searchChannelArticles(channel))
   }
 }
 

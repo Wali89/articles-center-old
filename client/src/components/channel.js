@@ -8,7 +8,7 @@ class Channel extends Component {
     return(
       <div className="channel">
         <h3> <Link to={{
-          pathname: 'channels/${this.props.id}',
+          pathname: `/channels/${this.props.id}`,
           state: {
             name: this.props.name
           }
