@@ -9,8 +9,8 @@ const Navbar = () => {
   return(
     <Router>
       <div>
-        <div className="App-menu">
-          <div className="ui tabular stackable menu">
+        <div className="App-navbar">
+          <div className="ui-tabular-stackable-menu">
             <Link to="/" id="TopStories-link" className="item"> Top Stories </Link>
             <Link to="/channels" id="channels-link" className="item"> Browse Channels </Link>
             <Link to="/search" id="search-link" className="item">Search Articles</Link>
