@@ -19,7 +19,10 @@ class QueryInput extends Component {
 
   handleSubmit = event => {
     event.preventDefault()
-    this.props.searchArticles(this.state.text)  
+    this.props.searchArticles(this.state.text)
+    this.setState({
+      redirect: true
+    })  
   }
 
   render() {
