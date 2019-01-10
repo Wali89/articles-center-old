@@ -28,10 +28,10 @@ class QueryContainer extends Component {
 
 const mapStateToProps = state => {
   return{
-    results: state.articles.results,
-    query: state.articles.query,
-    numResults: state.articles.numResults,
-    searchDone: state.articles.searchDone,
+    results: state.results,
+    query: state.query,
+    numResults: state.numResults,
+    searchDone: state.searchDone,
   }
 }
 
