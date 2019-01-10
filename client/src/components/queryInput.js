@@ -13,7 +13,7 @@ class QueryInput extends Component {
 
   handleChange = event => {
     this.setState({
-      test: event.target.value
+      text: event.target.value
     })
   }
 
