@@ -11,9 +11,9 @@ const Navbar = () => {
       <div>
         <div className="App-navbar">
           <div className="ui-tabular-stackable-menu">
-            <button><Link to="/" id="TopStories-link" className="item"> Top Stories </Link></button>
-            <button><Link to="/channels" id="channels-link" className="item"> Browse Channels </Link></button>
-            <button><Link to="/search" id="search-link" className="item">Search Articles</Link></button>
+            <button className="button"><Link to="/" id="TopStories-link" className="item"> Top Stories </Link></button>
+            <button className="button"><Link to="/channels"> Browse Channels </Link></button>
+            <button className="button"><Link to="/search">Search Articles</Link></button>
             <h1 id="title" className="title">Article Center</h1>
           </div>
         </div>

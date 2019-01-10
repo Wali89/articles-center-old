@@ -12,7 +12,7 @@ class QueryContainer extends Component {
 
   render() {
     return (
-      <div>
+      <div className="search">
         <div id="query">
           <QueryInput searchArticles={this.props.searchArticles} />
 
