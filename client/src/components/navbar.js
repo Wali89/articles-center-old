@@ -11,10 +11,10 @@ const Navbar = () => {
       <div>
         <div className="App-navbar">
           <div className="ui-tabular-stackable-menu">
-            <Link to="/" id="TopStories-link" className="item"> Top Stories </Link>
-            <Link to="/channels" id="channels-link" className="item"> Browse Channels </Link>
-            <Link to="/search" id="search-link" className="item">Search Articles</Link>
-            <h1 id="title" className="ui header floated right item">Article Center</h1>
+            <button><Link to="/" id="TopStories-link" className="item"> Top Stories </Link></button>
+            <button><Link to="/channels" id="channels-link" className="item"> Browse Channels </Link></button>
+            <button><Link to="/search" id="search-link" className="item">Search Articles</Link></button>
+            <h1 id="title" className="title">Article Center</h1>
           </div>
         </div>
         <div className="ui hidden divider"></div>
