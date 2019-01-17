@@ -35,6 +35,7 @@ class ArticlesController < ApplicationController
 
   def articles_search
     @search = Search.create(article_params)
+    
     response = Faraday.get 'https://newsapi.org/v2/everything?' do |req|
       req.params['apiKey'] = ENV['SECRET_KEY']
       req.params['q'] = params[:article][:query]
