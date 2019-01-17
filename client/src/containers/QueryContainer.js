@@ -42,12 +42,14 @@ const mapStateToProps = state => {
     query: state.query,
     numResults: state.numResults,
     searchDone: state.searchDone,
+    searches: state.searches
   }
 }
 
 const mapDispatchToProps = dispatch => {
   return {
     searchArticles: (query) => dispatch(searchArticles(query)),
+    getSearches: () => dispatch(getSearches())
   }
 }
 

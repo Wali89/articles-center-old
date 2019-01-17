@@ -41,7 +41,7 @@ export function searchArticles(query) {
         'Accept': 'application/json',
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({article: {query: query}})
+      body: JSON.stringify({articles: {query: query}})
     })
     .then(response => {
       if (!response.ok) {
@@ -57,9 +57,8 @@ export function searchArticles(query) {
 export function getSearches() {
   return (dispatch) => {
     dispatch({type: 'FETCHING_SEARCHES'});
-    return fetch('api/searches')
+    return fetch('/api/searches')
       .then(response => response.json())
-
       .then(searches => dispatch({type: 'FETCH_RECENT_SEARCHES', payload: searches}))
   }
 }
