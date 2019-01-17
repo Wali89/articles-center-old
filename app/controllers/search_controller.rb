@@ -1,7 +1,8 @@
 class SearchController < ApplicationController
-
+  require 'pry'
   def last_ten
-    @searches = Search.select('*').order("created_at desc").limit(10)
+    @searches = Search.all
+    
     render json: @searches
   end
 

@@ -9,7 +9,7 @@ const Searches = (props) => {
 
     return(
       <div id="recent-searches">
-        {renderSeaches()}
+        {renderSearches()}
       </div>
     )
 }

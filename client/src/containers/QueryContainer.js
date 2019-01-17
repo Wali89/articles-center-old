@@ -4,6 +4,7 @@ import QueryArticles from '../components/queryArticles';
 import Searches from '../components/searches';
 import { connect } from 'react-redux';
 import { searchArticles } from '../actions/articleActions';
+import { getSearches } from '../actions/articleActions';
 
 
 class QueryContainer extends Component {
@@ -11,7 +12,7 @@ class QueryContainer extends Component {
 
   }
   componentDidMount(){
-    
+    this.props.getSearches()
   }
 
   render() {
@@ -23,8 +24,13 @@ class QueryContainer extends Component {
         </div>
 
         <div>
+          <Searches searches={this.props.searches}/>
+        </div>  
+        <div>
           <QueryArticles results={this.props.results} numResults={this.props.numResults} searchDone={this.props.searchDone}/> 
-        </div> 
+        </div>
+
+         
       </div>
     )
   }

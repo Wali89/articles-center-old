@@ -59,6 +59,7 @@ export function getSearches() {
     dispatch({type: 'FETCHING_SEARCHES'});
     return fetch('api/searches')
       .then(response => response.json())
+
       .then(searches => dispatch({type: 'FETCH_RECENT_SEARCHES', payload: searches}))
   }
 }

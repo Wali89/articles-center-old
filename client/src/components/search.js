@@ -9,3 +9,5 @@ const Search = (props) => {
     </React.Fragment> 
   )
 }
+
+export default Search
