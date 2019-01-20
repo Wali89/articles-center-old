@@ -8,6 +8,7 @@ class ArticlesController < ApplicationController
       req.params['page'] = 1
 
     end
+  
     @headlines = JSON.parse(response.body)
     render json: @headlines, status: 200
   end

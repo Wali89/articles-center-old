@@ -6,14 +6,22 @@ import { connect } from 'react-redux';
 import { searchArticles } from '../actions/articleActions';
 import { getSearches } from '../actions/articleActions';
 
+export function addLike(index) {
+  const { searchLike } = this.state.searches[index].likes
+  this.setState({...this.state.searches[index], likes: searchLike++})
+};
 
 class QueryContainer extends Component {
   state = {
 
   }
+
+
   componentDidMount(){
     this.props.getSearches()
   }
+
+
 
   render() {
     return (
@@ -40,6 +48,7 @@ const mapStateToProps = state => {
   return{
     results: state.results,
     query: state.query,
+    likes: state.likes,
     numResults: state.numResults,
     searchDone: state.searchDone,
     searches: state.searches

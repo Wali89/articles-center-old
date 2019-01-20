@@ -14,6 +14,7 @@ ActiveRecord::Schema.define(version: 2019_01_10_004638) do
 
   create_table "searches", force: :cascade do |t|
     t.string "query"
+    t.integer "likes"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

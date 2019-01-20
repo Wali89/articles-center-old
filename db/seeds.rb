@@ -6,8 +6,8 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-Search.create(query: 'Bitcoin')
-Search.create(query: 'NBA')
-Search.create(query: 'NFL')
-Search.create(query: 'Stocks')
-Search.create(query: 'Tech')
+Search.create(query: 'Bitcoin', likes: 0)
+Search.create(query: 'NBA', likes: 4)
+Search.create(query: 'NFL', likes: 1)
+Search.create(query: 'Stocks', likes: 0)
+Search.create(query: 'Tech', likes: 3)
