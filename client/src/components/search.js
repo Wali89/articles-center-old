@@ -1,16 +1,43 @@
 import React, { Component } from 'react';
-import { addLike } from '../containers/QueryContainer';
-
-const Search = (props) => {
+import ReactDOM from "react-dom";
 
 
+class Search extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { likes: props.likes,
+    id: props.id,
+    };
+  
+    
+  }
+  
+  handleCounter = (e) => {
+    const newCount = this.state.likes + 1
+    this.setState({
+       likes: newCount
+    })
+    return fetch(`http://localhost:3001/api/searches/${(this.state.id)}`, {
+      method: 'POST',
+      headers: {
+        accept: 'application/json'
+      },
+    })
+    
+
+  }
+
+  render() {
     return(
     
     <div>
-       <p>{props.query} Likes:{props.likes}</p> <button data-id={props.id} onClick={addLike(props.id)} > LIKE </button>
+      <p> Likes: {this.state.likes} </p>  <button data-id={this.state.id} onClick={ event => this.handleCounter(event) }> Like  </button>
     </div>
      
     )
   }
+}
 
-export default Search
+
+
+export default Search;

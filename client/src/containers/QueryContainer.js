@@ -5,17 +5,12 @@ import Searches from '../components/searches';
 import { connect } from 'react-redux';
 import { searchArticles } from '../actions/articleActions';
 import { getSearches } from '../actions/articleActions';
+import { debug } from 'util';
 
-export function addLike(index) {
-  const { searchLike } = this.state.searches[index].likes
-  this.setState({...this.state.searches[index], likes: searchLike++})
-};
 
 class QueryContainer extends Component {
-  state = {
-
-  }
-
+ 
+  
 
   componentDidMount(){
     this.props.getSearches()
@@ -24,6 +19,7 @@ class QueryContainer extends Component {
 
 
   render() {
+
     return (
       <div className="search">
         <div id="query">
@@ -32,7 +28,7 @@ class QueryContainer extends Component {
         </div>
 
         <div>
-          <Searches searches={this.props.searches}/>
+          <Searches searches={this.props.searches} />
         </div>  
         <div>
           <QueryArticles results={this.props.results} numResults={this.props.numResults} searchDone={this.props.searchDone}/> 
@@ -48,7 +44,6 @@ const mapStateToProps = state => {
   return{
     results: state.results,
     query: state.query,
-    likes: state.likes,
     numResults: state.numResults,
     searchDone: state.searchDone,
     searches: state.searches

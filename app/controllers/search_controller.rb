@@ -8,9 +8,13 @@ class SearchController < ApplicationController
 
   def update
     search = Search.find_by(id: params[:id])
+
     search.likes += 1
     search.save
-    render json: search, status: 201
+
+    @searches = Search.all
+    
+    render json: @searches
   end
 
 end
