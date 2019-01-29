@@ -6,20 +6,52 @@ import { connect } from 'react-redux';
 import { searchArticles } from '../actions/articleActions';
 import { getSearches } from '../actions/articleActions';
 import { debug } from 'util';
+import SortSearchesTable from '../components/sortSearchesTable';
+import Search from '../components/search';
 
 
 class QueryContainer extends Component {
- 
   
+  constructor (props) {
+    super(props) 
+    this.toggleSortLikes = this.toggleSortLikes.bind(this)
+    this.state = {
+      searches: [],
+      query: props.query,
+      numResults: ''
 
+    }
+  }
+  
   componentDidMount(){
     this.props.getSearches()
   }
 
+  componentDidUpdate(prevProps){
+    if (this.props.searches !== prevProps.searches) {
+      this.setState({
+        ...this.state, searches: this.props.searches
+      })
+    }
+  }
+
+
+  sortyByLikes = () => {
+    const oldSearches = this.state.searches
+    let newSearchList = oldSearches.sort((a, b) => a.likes > b.likes)  
+    this.setState({
+      ...this.state, searches: newSearchList 
+    })
+  }
+
+  toggleSortLikes (event) {
+    this.sortyByLikes()
+  }
 
 
   render() {
-
+    
+    
     return (
       <div className="search">
         <div id="query">
@@ -28,8 +60,10 @@ class QueryContainer extends Component {
         </div>
 
         <div>
-          <Searches searches={this.props.searches} />
-        </div>  
+          <button onClick={this.toggleSortLikes}> Sort </button> 
+          <Searches searches={this.state.searches}/>
+        </div>
+          
         <div>
           <QueryArticles results={this.props.results} numResults={this.props.numResults} searchDone={this.props.searchDone}/> 
         </div>

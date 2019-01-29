@@ -7,6 +7,7 @@ class Search extends Component {
     super(props);
     this.state = { likes: props.likes,
     id: props.id,
+    query: props.query,
     };
   
     
@@ -28,6 +29,7 @@ class Search extends Component {
   }
 
   render() {
+    
     return(
     
     <div>
