@@ -6,7 +6,6 @@ import { connect } from 'react-redux';
 import { searchArticles } from '../actions/articleActions';
 import { getSearches } from '../actions/articleActions';
 import { debug } from 'util';
-import SortSearchesTable from '../components/sortSearchesTable';
 import Search from '../components/search';
 
 
@@ -37,7 +36,7 @@ class QueryContainer extends Component {
   }
 
   sortByLikes = (e) => {
-    const sortedSearches = this.state.searches.sort( (a, b) => a.e > b.e)
+    const sortedSearches = this.state.searches.sort( (a, b) => a > b)
     this.setState(function() {
       return{
       searches: sortedSearches
