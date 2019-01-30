@@ -13,14 +13,15 @@ import Search from '../components/search';
 class QueryContainer extends Component {
   
   constructor (props) {
-    super(props) 
-    this.toggleSortLikes = this.toggleSortLikes.bind(this)
+    super(props)
+    
     this.state = {
       searches: [],
       query: props.query,
       numResults: ''
 
     }
+    this.sortByLikes = this.sortByLikes.bind(this)
   }
   
   componentDidMount(){
@@ -35,17 +36,13 @@ class QueryContainer extends Component {
     }
   }
 
-
-  sortyByLikes = () => {
-    const oldSearches = this.state.searches
-    let newSearchList = oldSearches.sort((a, b) => a.likes > b.likes)  
-    this.setState({
-      ...this.state, searches: newSearchList 
+  sortByLikes = (e) => {
+    const sortedSearches = this.state.searches.sort( (a, b) => a.e > b.e)
+    this.setState(function() {
+      return{
+      searches: sortedSearches
+      }
     })
-  }
-
-  toggleSortLikes (event) {
-    this.sortyByLikes()
   }
 
 
@@ -60,8 +57,8 @@ class QueryContainer extends Component {
         </div>
 
         <div>
-          <button onClick={this.toggleSortLikes}> Sort </button> 
-          <Searches searches={this.state.searches}/>
+      
+          <Searches searches={this.state.searches} sortByLikes={this.sortByLikes}/>
         </div>
           
         <div>

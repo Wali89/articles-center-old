@@ -12,6 +12,7 @@ Rails.application.routes.draw do
     post'/articles_search', to: 'articles#articles_search'
     get '/searches', to: 'search#last_ten'
     post '/searches/:id', to: 'search#update'
+    
   end
 end
 
