@@ -20,8 +20,7 @@ class QueryContainer extends Component {
       numResults: ''
 
     }
-    this.sortByLikes = this.sortByLikes.bind(this)
-    this.handleClick = this.handleClick.bind(this);
+
   }
   
   componentDidMount(){

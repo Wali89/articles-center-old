@@ -9,7 +9,7 @@ class Searches extends Component {
     super(props);
     this.sortByLikes = this.sortByLikes.bind(this)
     this.state = {
-      searches: props.searches,
+      searches: [],
       sort: false
     }
   }
@@ -44,13 +44,6 @@ class Searches extends Component {
 
   render() {
     const { sort, searches } = this.state  
-    
-    if(sort) {
-      return (
-        <div>
-        </div>
-      )
-    }
 
       return (
         <div>
