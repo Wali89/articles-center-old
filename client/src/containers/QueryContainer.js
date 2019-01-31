@@ -21,22 +21,23 @@ class QueryContainer extends Component {
 
     }
     this.sortByLikes = this.sortByLikes.bind(this)
+    this.handleClick = this.handleClick.bind(this);
   }
   
   componentDidMount(){
     this.props.getSearches()
   }
 
-  componentDidUpdate(prevProps){
-    if (this.props.searches !== prevProps.searches) {
-      this.setState({
-        ...this.state, searches: this.props.searches
-      })
-    }
+
+
+  handleClick() {
+    console.log('Click happened');
   }
 
-  sortByLikes = (e) => {
-    const sortedSearches = this.state.searches.sort( (a, b) => a > b)
+  sortByLikes() {
+    console.log('Click happened');
+    const sortedSearches =  [...this.state.searches]
+    .sort((a, b) => a.likes > b.likes)
     this.setState(function() {
       return{
       searches: sortedSearches
@@ -56,8 +57,9 @@ class QueryContainer extends Component {
         </div>
 
         <div>
-      
-          <Searches searches={this.state.searches} sortByLikes={this.sortByLikes}/>
+        <button onClick={this.handleClick}>Click Me</button>
+        
+          <Searches searches={this.props.searches} />
         </div>
           
         <div>
